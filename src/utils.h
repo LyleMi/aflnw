@@ -5,11 +5,18 @@ struct config {
     char *addr;
     char *proc;
     char *path;
+    char *stdout;
+    char *stderr;
     int port;
+    int debug;
+    // time for usleep
+    int utime;
 };
 
-void parseArgs(int argc, char *argv[], struct config *conf);
-void freeArgs(struct config *conf);
+struct config *conf;
+
+void parseArgs(int argc, char *argv[]);
+void freeArgs();
 int processPid(const char *proc);
 void stopProcess(const char *proc);
 void tcpSend(char *addr, int port);

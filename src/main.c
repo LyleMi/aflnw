@@ -6,9 +6,8 @@
 int main(int argc, char *argv[], char *const envp[])
 {
     int pid;
-    struct config *conf = NULL;
-    conf = (struct config *)malloc(sizeof(struct config));
-    parseArgs(argc, argv, conf);
+
+    parseArgs(argc, argv);
     pid = processPid(conf->proc);
     if (pid <= 0) {
         run(conf->path, argc, argv, optind);
