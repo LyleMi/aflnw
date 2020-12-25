@@ -66,6 +66,7 @@ mkdir build && cd build && cmake .. && make
 ```bash
 git clone --depth=1 https://github.com/nginx/nginx.git
 cd nginx
+mkdir `pwd`/logs
 export CC=/path/to/afl/afl-clang-fast
 ./auto/configure --prefix=`pwd` --with-select_module
 make -j `nproc`
@@ -77,7 +78,7 @@ make -j `nproc`
 master_process off;
 daemon on;
 # 关闭日志
-error_log off;
+error_log /dev/null;
 
 events {
         worker_connections  1024;

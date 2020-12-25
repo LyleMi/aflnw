@@ -66,6 +66,7 @@ First install nginx:
 ```bash
 git clone --depth=1 https://github.com/nginx/nginx.git
 cd nginx
+mkdir `pwd`/logs
 export CC=/path/to/afl/afl-clang-fast
 ./auto/configure --prefix=`pwd` --with-select_module
 make -j `nproc`
@@ -78,7 +79,7 @@ In order to facilitate the fuzzing, modify the part of the configuration in ``ng
 master_process off;
 daemon on;
 # close log
-error_log off;
+error_log /dev/null;
 
 events {
         worker_connections  1024;
