@@ -55,6 +55,16 @@ mkdir build && cd build && cmake .. && make
 
 - ``-a addr`` 网络监听地址，建议设置为 ``127.0.0.1``
 - ``-p port`` 网络监听端口
+- ``-n name`` 程序名，用于判断程序状态
+- ``-i stdin`` 重定向标准输入流
+- ``-o stdout`` 重定向标准输出流
+- ``-e stderr`` 重定向标准错误流
+- ``-m mode`` 测试模式，当前支持 net / cgi
+- ``-r chrootpath`` 指定后会chroot到对应目录
+- ``-t time`` 网络模式测试时的时间
+- ``-s shmid`` AFL SHMID
+- ``-c`` 指定后每次运行检查程序状态
+- ``-d`` 开启debug
 - ``-- <remains>`` 待测程序启动参数
 
 ## 测试样例

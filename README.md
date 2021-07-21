@@ -55,6 +55,16 @@ mkdir build && cd build && cmake .. && make
 
 - ``-a addr`` network listening address, it is recommended to set to ``127.0.0.1``
 - ``-p port`` network listening port
+- ``-n name`` program name, used to monitor program status
+- ``-i stdin`` stdin, reset stdin pipe
+- ``-o stdout`` stdout, reset stdout pipe
+- ``-e stderr`` stderr, reset stderr pipe
+- ``-m mode`` test mode, could be net / cgi
+- ``-r chrootpath`` chroot to chrootpath if needed
+- ``-t time`` wait time for network test
+- ``-s shmid`` AFL SHMID
+- ``-c`` check service status
+- ``-d`` enable debug
 - ``-- <remains>`` parameters of the program to be fuzzed
 
 ## Example
