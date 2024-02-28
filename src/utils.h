@@ -23,7 +23,7 @@ struct config {
     int utime;
 };
 
-struct config *conf;
+extern struct config *conf;
 
 void parse_args(int argc, char *argv[]);
 void free_args();

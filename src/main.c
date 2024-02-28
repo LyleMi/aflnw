@@ -4,6 +4,8 @@
 
 #include "utils.h"
 
+struct config *conf;
+
 void run_net_mode(int argc, char *argv[])
 {
     int pid;
