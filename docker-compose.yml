@@ -1,0 +1,9 @@
+version: '3'
+services:
+  aflnw:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/aflnw
+    command: sleep inf
